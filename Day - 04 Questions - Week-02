@@ -1,0 +1,73 @@
+ques 1:
+#include <iostream>
+
+int main() {
+    int num1, num2;
+    
+    std::cout << "Enter first integer: ";
+    std::cin >> num1;
+
+    std::cout << "Enter second integer: ";
+    std::cin >> num2;
+
+    std::cout << "Addition: " << num1 + num2 << std::endl;
+    std::cout << "Subtraction: " << num1 - num2 << std::endl;
+    std::cout << "Multiplication: " << num1 * num2 << std::endl;
+    
+    if (num2 != 0) {
+        std::cout << "Division: " << static_cast<float>(num1) / num2 << std::endl;
+        std::cout << "Modulus: " << num1 % num2 << std::endl;
+    } else {
+        std::cout << "Division: Error (division by zero)" << std::endl;
+        std::cout << "Modulus: Error (division by zero)" << std::endl;
+    }
+
+    return 0;
+}
+
+
+ques 2:
+#include <iostream>
+
+class Complex {
+private:
+    int real, imag;
+
+public:
+    Complex(int r = 0, int i = 0) : real(r), imag(i) {}
+
+    Complex operator + (const Complex& obj) {
+        return Complex(real + obj.real, imag + obj.imag);
+    }
+
+    Complex operator - (const Complex& obj) {
+        return Complex(real - obj.real, imag - obj.imag);
+    }
+
+    void display() const {
+        std::cout << real << " + " << imag << "i" << std::endl;
+    }
+};
+
+int main() {
+    Complex num1(3, 4), num2(1, 2);
+
+    std::cout << "Complex Number 1: ";
+    num1.display();
+
+    std::cout << "Complex Number 2: ";
+    num2.display();
+
+    Complex sum = num1 + num2;
+    std::cout << "Sum: ";
+    sum.display();
+
+    Complex difference = num1 - num2;
+    std::cout << "Difference: ";
+    difference.display();
+
+    return 0;
+}
+
+
+
