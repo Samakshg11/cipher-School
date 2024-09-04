@@ -1,0 +1,83 @@
+q1:
+Ques-01 Write a C++ program that takes an array as input and prints the sum of the array.
+
+Sample Input:
+Enter the size of the array: 5
+Enter the array: 5 10 15 20 25
+
+Sample Output:
+Sum of the array: 75
+
+Ques-02 Write a C++ program that takes an array as input and prints the sum of odd numbers and the sum of even numbers separately.
+
+Sample Input:
+Enter the size of the array: 5
+Enter the array: 5 10 15 20 25
+
+Sample Output:
+Sum of odd numbers: 45
+Sum of even numbers: 30
+
+Ques-03 Write a C++ program that takes an array as input and prints the number of odd numbers and the number of even numbers in the array.
+
+Sample Input:
+Enter the size of the array: 5
+Enter the array elements: 5 10 15 20 25
+
+Sample Output:
+Number of odd numbers: 3
+Number of even numbers: 2
+
+
+
+q2:
+#include <iostream>
+
+int main() {
+    int size, sumOdd = 0, sumEven = 0;
+
+    std::cout << "Enter the size of the array: ";
+    std::cin >> size;
+
+    int arr[size];
+    std::cout << "Enter the array elements: ";
+    for (int i = 0; i < size; ++i) {
+        std::cin >> arr[i];
+        if (arr[i] % 2 == 0) {
+            sumEven += arr[i];
+        } else {
+            sumOdd += arr[i];
+        }
+    }
+
+    std::cout << "Sum of odd numbers: " << sumOdd << std::endl;
+    std::cout << "Sum of even numbers: " << sumEven << std::endl;
+
+    return 0;
+}
+
+q3:
+#include <iostream>
+
+int main() {
+    int size, countOdd = 0, countEven = 0;
+
+    std::cout << "Enter the size of the array: ";
+    std::cin >> size;
+
+    int arr[size];
+    std::cout << "Enter the array elements: ";
+    for (int i = 0; i < size; ++i) {
+        std::cin >> arr[i];
+        if (arr[i] % 2 == 0) {
+            countEven++;
+        } else {
+            countOdd++;
+        }
+    }
+
+    std::cout << "Number of odd numbers: " << countOdd << std::endl;
+    std::cout << "Number of even numbers: " << countEven << std::endl;
+
+    return 0;
+}
